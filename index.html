@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" \
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.0/css/all.css">
+    <link rel="stylesheet" type="text/css" href="final.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>等一下要吃啥啊? What to eat later?</title>
+</head>
+<body>
+    <a name="Introduction"></a>
+    <div class="container-fluid"style="background-image:url(whattoeat.png);background-position: center;
+        ;background-color: #e6e6e6;position: relative;background-repeat: repeat-y;background-size: 100%">
+        <div style="background-color: white;width: 80vw;margin: auto;opacity: 0.8"align="right">
+            <div style="padding-top: 20px" align="center">
+                <div class="maintitle"style="color: #343a40">致今天不知道要吃什麼的各位</div>
+                <div style="height: 32px">
+                    <div class="blackline"></div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <div class="text" style="margin-left: 0px;margin-top: 0px"align="center" >
+                        當下課的鐘聲敲響，你走出教室，外頭早已充斥著飯菜香。<br>此時肚子開始咕嚕咕嚕作響，<br>哦~又到了午(晚)餐時間。但等一下要吃什麼啊?<br> A : ㄟ等一下中午(晚餐)要吃什麼?<br>
+                        B : 不知道。C : 我都可以。D : 沒意見，隨便。<br>A : 那我們去吃台科大好了。<br>B : 不要，我昨天才吃過。<br>A : X，那你想一個<br>B : 隨便，都可以。<br>大家: ...
+                    </div>
+                    <div style="padding: 30px 20px 80px 20px" align="center">
+                        <div href="#selector" class="secondbuttontxt secondbutton" onclick="goToAnchor('selector')">GET STARTED!!!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--second section-->
+
+    <a name="selector"></a>
+    <div class="container-fluid"style="background-color: #e6e6e6;position: relative;flex-wrap: wrap;padding-top: 20px;min-height: 850px">
+        <!-- Control buttons -->
+        <div id="myBtnContainer">
+          <button class="btn first active1" onclick="filterSelection('all')"> 全部</button>
+          <button class="btn first" onclick="filterSelection('公館商圈')"> 公館商圈(羅斯福路+汀州路)</button>
+          <button class="btn first" onclick="filterSelection('118')"> 118</button>
+          <button class="btn first" onclick="filterSelection('新生南路')"> 新生南路</button>
+          <button class="btn first" onclick="filterSelection('臺大&台科大')"> 臺大&台科大</button>
+          <div style="display: inline-flex"class="text">  -- 先選要在哪裡吃(點選全部顯示餐廳名單)，踏出第一步!!!</div>
+        </div>
+
+        <div id="categories"style="padding-bottom: 20px;padding-top: 20px;">
+          <button class="btn sec active2" onclick="secfilterSelection('all')"> 全部</button>
+          <button class="btn sec" onclick="secfilterSelection('飯')"> 飯</button>
+          <button class="btn sec" onclick="secfilterSelection('麵')"> 麵</button>
+          <button class="btn sec" onclick="secfilterSelection('餃類')"> 餃類</button>
+          <button class="btn sec" onclick="secfilterSelection('火鍋')"> 火鍋</button>
+          <div style="display: inline-flex"class="text">  -- 再選要吃什麼 (快完成了!!!)</div>
+        </div>
+        <div class="container" id="restaurants">
+          <a class="filterDiv 公館商圈 飯" href="https://reurl.cc/20AKLX" target="_blank">水源食坊</a>
+          <a class="filterDiv 公館商圈 飯 麵" href="https://reurl.cc/Nj8YNq" target="_blank">狠台</a>
+          <a class="filterDiv 公館商圈 飯 麵" href="https://reurl.cc/g7bRnV" target="_blank">大水元</a>
+          <a class="filterDiv 公館商圈 火鍋" href="https://reurl.cc/Mvm32X" target="_blank">鍋in</a>
+          <a class="filterDiv 公館商圈 飯" href="https://reurl.cc/qdbGp3" target="_blank">嗤尤鐵板燒</a>
+          <a class="filterDiv 公館商圈 火鍋" href="https://reurl.cc/vDbQEl" target="_blank">韓天閣</a>
+          <a class="filterDiv 公館商圈 飯" href="https://reurl.cc/Kkz8Ep" target="_blank">幸好沒錯過你</a>
+          <a class="filterDiv 公館商圈 飯" href="https://reurl.cc/qdbGa3" target="_blank">季丼屋</a>
+          <a class="filterDiv 公館商圈 飯" href="https://reurl.cc/0obKQo" target="_blank">Just curry</a>
+          <a class="filterDiv 公館商圈 飯" href="https://reurl.cc/QdlYm2" target="_blank">吉野家</a>
+          <a class="filterDiv 公館商圈 麵" href="https://reurl.cc/E7NVWv" target="_blank">Mr.拉麵野崎</a>
+          <a class="filterDiv 公館商圈 麵" href="https://reurl.cc/nzbmye" target="_blank">十二巷拉麵</a>
+          <a class="filterDiv 118 餃類" href="https://reurl.cc/9EADLO" target="_blank">大李水餃</a>
+          <a class="filterDiv 118 餃類" href="https://reurl.cc/vDbQ4L" target="_blank">李記水餃</a>
+          <a class="filterDiv 118 麵" href="https://reurl.cc/624KYM" target="_blank">五九麵館</a>
+          <a class="filterDiv 118 麵" href="https://reurl.cc/exbM7j" target="_blank">I'm pasta</a>
+          <a class="filterDiv 118 飯" href="https://reurl.cc/qdbG6g" target="_blank">合益佳雞肉飯</a>
+          <a class="filterDiv 118 飯" href="https://reurl.cc/pdbaAa" target="_blank">呂 巷仔內</a>
+          <a class="filterDiv 118 麵" href="https://reurl.cc/20AKVv" target="_blank">二八麵堂</a>
+          <a class="filterDiv 118 飯" href="https://reurl.cc/exbMAj" target="_blank">小姊姊麻辣燙</a>
+          <a class="filterDiv 118 飯 麵" href="https://reurl.cc/WdY0gD" target="_blank">笑嘻嘻</a>
+          <a class="filterDiv 118 麵" href="https://reurl.cc/nzbm2l" target="_blank">四面八方</a>
+          <a class="filterDiv 118 飯 火鍋" href="https://reurl.cc/yZbR0a" target="_blank">韓喜堂</a>
+          <a class="filterDiv 118 麵" href="https://reurl.cc/0obKGA" target="_blank">山西刀削麵</a>
+          <a class="filterDiv 新生南路 飯 麵" href="https://reurl.cc/b5bWoX" target="_blank">鳳城</a>
+          <a class="filterDiv 新生南路 飯" href="https://reurl.cc/O1aYov" target="_blank">柒食貳</a>
+          <a class="filterDiv 新生南路 火鍋" href="https://reurl.cc/R47Yoe" target="_blank">溏老鴨</a>
+          <a class="filterDiv 新生南路 飯" href="https://reurl.cc/7XAKqN" target="_blank">阿英滷肉飯</a>
+          <a class="filterDiv 新生南路 飯" href="https://reurl.cc/AqWMlQ" target="_blank">稻咖哩</a>
+          <a class="filterDiv 新生南路 麵" href="https://reurl.cc/D9MqM6" target="_blank">發現義大利麵</a>
+          <a class="filterDiv 新生南路 餃類" href="https://reurl.cc/GVqnqG" target="_blank">八方雲集</a>
+          <a class="filterDiv 新生南路 飯" href="https://reurl.cc/z8GqGa" target="_blank">七里亭</a>
+          <a class="filterDiv 新生南路 飯 麵" href="https://reurl.cc/d0bQjV" target="_blank">豪香熱炒</a>
+          <a class="filterDiv 新生南路 飯 麵" href="https://reurl.cc/L3xaz4" target="_blank">海賊食堂</a>
+          <a class="filterDiv 臺大&台科大 飯 麵" href="https://reurl.cc/QdlYkO" target="_blank">臺大小福</a>
+          <a class="filterDiv 臺大&台科大 飯 麵" href="https://reurl.cc/xZbNjV" target="_blank">臺大小小福</a>
+          <a class="filterDiv 臺大&台科大 飯" href="https://reurl.cc/0obK0x" target="_blank">卓聯</a>
+          <a class="filterDiv 臺大&台科大 飯 麵 餃類" href="https://reurl.cc/Nj8Yd9" target="_blank">活大</a>
+          <a class="filterDiv 臺大&台科大 飯 麵" href="https://reurl.cc/QdlYAM" target="_blank">台科第一學餐</a>
+          <a class="filterDiv 臺大&台科大 飯 麵" href="https://reurl.cc/nzbm36" target="_blank">台科第三學餐</a>
+        </div>
+        <div class="secondbutton secondbuttontxt" style="padding-left: 40px;margin-top: 30px;margin-left: auto" onclick="draw()">幫我決定!!!</div>
+        <div id="myDIV" class="header" style="margin-top: 50px;margin-bottom: 50px">
+          <h2 class="text" style="font-size: xx-large">不在清單內嗎?那就自己加吧!!</h2>
+          <input type="text" id="myInput" placeholder="Title..." style="margin-left: 100px">
+          <span onclick="newElement()" class="addBtn">Add</span>
+        </div>
+
+                <!-- Footer -->
+
+        <footer class="page-footer font-small stylish-color-dark pt-4"style="background-color: #343a40;position: relative">
+
+          <!-- Footer Links -->
+          <div class="container text-center text-md-left">
+
+            <!-- Grid row -->
+            <div class="row">
+
+              <!-- Grid column -->
+              <div class="col mx-auto">
+
+                <!-- Content -->
+                <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text"style="font-size: xx-large;color: white">讓這個網頁更好!!</h5>
+                <p class="text" style="color: white">這裡是我的聯絡資訊,<br> 如果對網站有什麼建議，歡迎聯絡我<br> 一起讓這個網站變好，<br> 晚餐午餐選擇沒煩惱!!</p>
+
+              </div>
+              <!-- Grid column -->
+
+              <hr class="clearfix w-100 d-md-none">
+
+              <!-- Grid column -->
+              <div class="col mx-auto">
+
+                <!-- Links -->
+                <h5 class="font-weight-bold text-uppercase mt-3 mb-4 text"style="font-size: xx-large;color: white">聯絡資訊</h5>
+
+                <ul class="list-unstyled text">
+                  <li>
+                    <a style="font-size: large;color: white">電子郵件 :</a>
+                    <a href="https://mail.google.com"target="_blank">b08209009@g.ntu.edu.tw</a>
+                  </li>
+                  <li>
+                    <a style="font-size: large;color: white"target="_blank">手機號碼 :</a>
+                    <a href="#!">097X-XXX-740</a>
+                  </li>
+                  <li>
+                    <a style="font-size: large;color: white"target="_blank">地址 :</a>
+                    <a href="https://www.google.com.tw/maps/place/402%E5%8F%B0%E4%B8%AD%E5%B8%82%E5%8D%97%E5%8D%80/@24.1199677,120.6469267,14z/data=\
+                    !3m1!4b1!4m5!3m4!1s0x34693c55c1ad4d61:0x43c53b130c5be0ba!8m2!3d24.1196339!4d120.6602534?hl=zh-TW"target="_blank">Taichung City 402, Taiwan</a>
+                  </li>
+                  <li>
+                    <a style="font-size: large;color: white"target="_blank">GitHub :</a>
+                    <a href="https://github.com/JerryLin-0906"target="_blank">JerryLin-0906</a>
+                  </li>
+                </ul>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <hr style="background-color: white;width: 500px">
+
+          <!-- Social buttons -->
+            <div style="height:50px"align="center">
+                <a class="footericon" style="background-image: url(white-facebook1.png);margin-right: 5px"href="https://www.facebook.com/profile.php?id=100005833354974"target="_blank"></a>
+                <a class="footericon" style="background-image: url(white-instagram.png);background-size: 35px;margin-left: 5px"href="https://www.instagram.com/jerrylin_0906/?hl=zh-tw"target="_blank"></a>
+            </div>
+
+          <!-- Copyright -->
+          <div class="footer-copyright text-center py-3"style="color: white">© 2020 Copyright:
+            <a href="https://jerrylin-0906.github.io/Self-introduction/"> Jui-Jiun Lin</a>
+              made with the help of bootstrap4 and W3school
+          </div>
+
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <!--script src="final.js"></script-->
+    <script src="test.js"></script>
+
+
+</body>
+</html>
