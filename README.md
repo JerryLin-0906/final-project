@@ -58,6 +58,10 @@
 </ul>
 
 <ul class="text">
+        <li style="list-style-type: square">註記:視窗被壓縮時，網站排版不會跑掉!!!
+</ul>
+
+<ul class="text">
         <li style="list-style-type: square">Footer(以bootstrap4模板做修改):
             <ul class="subtext">
                 <li style="list-style-type: circle">
