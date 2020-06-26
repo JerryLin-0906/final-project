@@ -5,7 +5,7 @@ function goToAnchor(anchor) {
   return false;
 }
 
-// Create a new list item when clicking on the "Add" button
+// 創造新的div
 function newElement() {
   var div = document.createElement("div");
   var inputValue = document.getElementById("myInput").value;
@@ -40,29 +40,45 @@ function newElement() {
   document.getElementById('class3').innerText = '還有賣什麼?';
 }
 
+// 顯示使用者選項
 function change(id,name) {
   var x = document.getElementById(id);
   x.innerText = name
 }
 
-function unshow() {
-  delete event.target.parentElement.remove()
+//刪除選項
+/*function unshow() {
+    $('.delete').on('click',$(this).parent().remove());
 }
-
+$(function() {
+    // still need this outer function to indicate
+    // to only bind the handler when the DOM is ready
+    $('.delete').;
+});
+/*
+ */
+function unshow() {
+  event.target.parentElement.remove()
+}
+/*
+$(() => {
+  $('.delete').on('click',$(this).parent().remove())
+})
+*/
+//抽籤
 function draw() {
   var x, array, j;
   x = document.getElementsByClassName("show1");
   array = Object.values(x)
   result = Math.floor(Math.random() * array.length)
-  name = x[result].innerText
+//  name = x[result].innerText
 
-  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
   for (j = 0; j < array.length; j++) {
     RemoveClass(array[j], "show2 show1");
   }
   AddClass(array[result], "show2");
 }
-
+//第一列按鈕
 function filterSelection(c) {
   var x, i;
   x = document.getElementsByClassName("filterDiv");
@@ -74,6 +90,7 @@ function filterSelection(c) {
   }
 }
 
+//第二列按鈕
 function secfilterSelection(d) {
   var x, i;
   x = document.getElementsByClassName("flitered");
@@ -85,7 +102,7 @@ function secfilterSelection(d) {
   }
 }
 
-// Show filtered elements
+// 顯示通過篩選的項目
 function AddClass(element, name) {
   var i, arr1, arr2;
   arr1 = element.className.split(" ");
@@ -97,7 +114,7 @@ function AddClass(element, name) {
   }
 }
 
-// Hide elements that are not selected
+// 消除無法通過過濾的項目
 function RemoveClass(element, name) {
   var i, arr1, arr2;
   arr1 = element.className.split(" ");
@@ -110,7 +127,19 @@ function RemoveClass(element, name) {
   element.className = arr1.join(" ");
 }
 
-// Add active class to the current control button (highlight it)
+$(() => {
+// 將兩層過濾的分開顯示
+$('#myBtnContainer .first').on('click', function () {
+  $('.active1').removeClass('active1');
+  $(this).addClass('active1');
+  });
+$('#categories .sec').on('click', function () {
+  $('.active2').removeClass('active2');
+  $(this).addClass('active2');
+  });
+})
+
+/*
 var btnContainer = document.getElementById("myBtnContainer");
 var secbtnContainer = document.getElementById("categories");
 var btns = btnContainer.getElementsByClassName("first");
@@ -129,3 +158,4 @@ for (var i = 0; i < secbtns.length; i++) {
     this.className += " active2";
   });
 }
+*/
