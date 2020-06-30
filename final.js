@@ -15,7 +15,6 @@ function newElement() {
   var divchild = document.createElement('div')
   var a = document.createElement('a')
   var t = document.createTextNode(inputValue);
-  //div.appendChild(t);
   div.appendChild(divchild);
   div.appendChild(a);
   a.appendChild(t);
@@ -46,44 +45,29 @@ function change(id,name) {
   x.innerText = name
 }
 
-//刪除選項
-/*function unshow() {
-    $('.delete').on('click',$(this).parent().remove());
-}
-$(function() {
-    // still need this outer function to indicate
-    // to only bind the handler when the DOM is ready
-    $('.delete').;
-});
-/*
- */
 function unshow() {
   event.target.parentElement.remove()
 }
-/*
-$(() => {
-  $('.delete').on('click',$(this).parent().remove())
-})
-*/
+
 //抽籤
 function draw() {
   var x, array, j;
   x = document.getElementsByClassName("show1");
   array = Object.values(x)
   result = Math.floor(Math.random() * array.length)
-//  name = x[result].innerText
 
   for (j = 0; j < array.length; j++) {
     RemoveClass(array[j], "show2 show1");
   }
   AddClass(array[result], "show2");
 }
+
+
 //第一列按鈕
 function filterSelection(c) {
   var x, i;
   x = document.getElementsByClassName("filterDiv");
   if (c == "all") c = "";
-  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
   for (i = 0; i < x.length; i++) {
     RemoveClass(x[i], "show2 show1 flitered");
     if (x[i].className.indexOf(c) > -1) AddClass(x[i], "show1 flitered");
@@ -95,7 +79,6 @@ function secfilterSelection(d) {
   var x, i;
   x = document.getElementsByClassName("flitered");
   if (d == "all") d = "";
-  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
   for (i = 0; i < x.length; i++) {
     RemoveClass(x[i], "show1 show2");
     if (x[i].className.indexOf(d) > -1) AddClass(x[i], "show1");
@@ -128,7 +111,6 @@ function RemoveClass(element, name) {
 }
 
 $(() => {
-// 將兩層過濾的分開顯示
 $('#myBtnContainer .first').on('click', function () {
   $('.active1').removeClass('active1');
   $(this).addClass('active1');
@@ -139,23 +121,3 @@ $('#categories .sec').on('click', function () {
   });
 })
 
-/*
-var btnContainer = document.getElementById("myBtnContainer");
-var secbtnContainer = document.getElementById("categories");
-var btns = btnContainer.getElementsByClassName("first");
-var secbtns = secbtnContainer.getElementsByClassName("sec");
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function() {
-    var current = document.getElementsByClassName("active1");
-    current[0].className = current[0].className.replace(" active1", "");
-    this.className += " active1";
-  });
-}
-for (var i = 0; i < secbtns.length; i++) {
-  secbtns[i].addEventListener("click", function() {
-    var current = document.getElementsByClassName("active2");
-    current[0].className = current[0].className.replace(" active2", "");
-    this.className += " active2";
-  });
-}
-*/
